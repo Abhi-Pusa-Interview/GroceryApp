@@ -11,7 +11,6 @@ const respone = {
 const callback = jest.fn();
 
 const mockAsyncCall = new Promise((resolve,reject) => {
-    console.log("mock async api called",respone);
     resolve(callback(respone));
 });
 
