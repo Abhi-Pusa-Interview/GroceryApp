@@ -2,7 +2,7 @@ import { renderHook } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import useFoodItemListConverter from "./useFoodItemListConverter";
 
-const matchedList = ["apple","rice","oranges","pulses","gram","vegetable oil","donut"];
+const matchedList = ["apple","rice","oranges","grapes","gram","vegetable oil","donut"];
 
 test('return proper values from useFoodItemListConverter hook', () => {
     const { result } = renderHook(() => useFoodItemListConverter());

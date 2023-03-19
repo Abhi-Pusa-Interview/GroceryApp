@@ -68,12 +68,12 @@ export default function GroceryItem(props:GroceryItemComponentProps) {
         >
             <Paper elevation={3} data-testid="grocery-item-paper">
                 <Grid container sx={{height:"150px",paddingTop:"15px"}}>
-                    <Grid item xs={1} sx={iconStyle}>
+                    <Grid item xs={1} md={1} sx={iconStyle}>
                         <Button data-testid="favourite-btn" sx={btnStyle} onClick={makeFavourite}>
                             {props.data.favourite === 0? <FavoriteBorderIcon data-testid="favourite-border-icon" />:<FavoriteIcon data-testid="favourite-icon"/>}
                         </Button>
                     </Grid>
-                    <Grid item xs={2}>
+                    <Grid item xs={4} md={2}>
                         <img alt="food item" style={{
                             height:"120px",
                             textAlign:"center", 
@@ -82,19 +82,19 @@ export default function GroceryItem(props:GroceryItemComponentProps) {
                             margin: "auto",
                             }} data-testid="grocery-img" src={props.data.imageUrl} />
                     </Grid>
-                    <Grid item xs={7}>
+                    <Grid item xs={5} md={7}>
                         <Typography variant="h3">{toCamelCase(props.data.name)}</Typography>
                         <Typography variant="body1">{props.data.description}</Typography>
                         <Typography variant="h4">{props.data.unitPrice}</Typography>
                     </Grid>
-                    <Grid item xs={1} sx={{textAlign:"center"}}>
+                    <Grid item xs={1} md={1} sx={{textAlign:"center"}}>
                         <Button sx={btnStyle} id="increase" data-testid="add-quantity-btn" variant="outlined" onClick={changeQuantity}><AddIcon  data-testid="add-item-icon" /></Button>
                         <Typography variant="h3">
                             {props.data.quantity}<Typography variant="caption">{props.data.unitOfMeasurement}</Typography>
                         </Typography>
                         <Button sx={btnStyle} id="decrease"  data-testid="remove-quantity-btn" variant="outlined" onClick={changeQuantity}><RemoveIcon  data-testid="remove-item-icon"/></Button>
                     </Grid>
-                    <Grid item xs={1} sx={iconStyle}>
+                    <Grid item xs={1} md={1} sx={iconStyle}>
                         <Button sx={btnStyle} variant="outlined"  data-testid="delete-item-btn" onClick={removeItem}><CloseIcon data-testid="delete-item-icon"/></Button>
                     </Grid>
                 </Grid>

@@ -1,5 +1,6 @@
 import React,{memo, useState} from "react";
 import useGroceryList from "../../hooks/useGroceryList";
+import {Box} from "@mui/material";
 import List from "../../component/List/List";
 import GroceryItem from "../../component/GroceryItem/GroceryItem";
 import GroceryControl from "../../component/GroceryControl/GroceryControl";
@@ -15,12 +16,14 @@ const Grocery = () => {
         setShowAddItem(false);
     }
     
-    return (<div style={{padding: "20px 30px",marginBottom: "60px"}}>
+    return (<Box sx={{
+        padding: { xs: "20px 5px", md: "20px 30px" },
+        marginBottom: "60px"}}>
         <SortGroceryList sortListItems={sortGroceryList}/>
         <List data={groceryList} Child={GroceryItem} updateGroceryItems={updateGroceryItem} removeGroceryItem={removeItemGroceryList}/>
         {showAddItem && <AddGroceryItem handleAddItem={handleAddItem}/>}
         <GroceryControl handleAddItem={() => setShowAddItem(true)} handleDeleteItem={removeAllItems} />
-    </div>)
+    </Box>)
 }
 
 export default memo(Grocery);
