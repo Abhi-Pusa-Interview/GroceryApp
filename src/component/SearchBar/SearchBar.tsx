@@ -12,7 +12,7 @@ export default function SearchBar({setSearchQuery}:any){
                 'data-testid': "search-bar",
             }}
             onInput={(e: ChangeEvent<HTMLInputElement>) => {
-                setSearchQuery(e.target.value);
+                setSearchQuery(e.target.value.toLowerCase());
             }}
             placeholder="Search Items To Add... "
             size="small"
