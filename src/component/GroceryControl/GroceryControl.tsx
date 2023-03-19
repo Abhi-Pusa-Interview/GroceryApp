@@ -27,7 +27,10 @@ export default function GroceryControl({handleAddItem, handleDeleteItem} : Groce
         bottom: "0px",
         textAlign: "center",
         width: "100%",
-        marginLeft: "-30px",
+        marginLeft: {
+            xs: "-5px",
+            md: "-30px"
+        },
         background:"rgba(0,0,0,0.2)",
         borderRadius: "7px 7px 0px 0px"
     }}>
